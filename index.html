@@ -3,24 +3,13 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<!-- PAGE TITLE -->
 <title>Heaven Yoon — Portfolio</title>
-
-<!--
-  ============================================================
-  Söhne is a licensed font from Klim Type Foundry.
-  ADD FONT FILES: drop your licensed Söhne .woff2 files into a
-  /fonts directory and update the src URLs below. Falls back to
-  Helvetica Neue / Arial in the meantime.
-  ============================================================
--->
 <style>
   @font-face {
     font-family: 'Söhne';
     font-weight: 300;
     font-style: normal;
     font-display: swap;
-    /* ADD FONT: src: url('fonts/soehne-light.woff2') format('woff2'); */
     src: local('Söhne Light'), local('Soehne-Light');
   }
   @font-face {
@@ -28,7 +17,6 @@
     font-weight: 400;
     font-style: normal;
     font-display: swap;
-    /* ADD FONT: src: url('fonts/soehne-buch.woff2') format('woff2'); */
     src: local('Söhne Buch'), local('Soehne-Buch');
   }
   @font-face {
@@ -36,14 +24,9 @@
     font-weight: 500;
     font-style: normal;
     font-display: swap;
-    /* ADD FONT: src: url('fonts/soehne-kraftig.woff2') format('woff2'); */
     src: local('Söhne Kräftig'), local('Soehne-Kraftig');
   }
 
-  /* ============================================================
-     DESIGN TOKENS — palette + spacing per design system.
-     White and grey only. Do not add accent colors.
-     ============================================================ */
   :root {
     --white: #ffffff;
     --off-white: #f8f8f7;
@@ -53,26 +36,20 @@
     --grey-500: #888784;
     --grey-700: #4a4947;
     --black: #1a1917;
-
-    /* Accent — deep ink blue. Used sparingly: link hover, tag pills, active states. */
     --accent: oklch(38% 0.10 258);
     --accent-soft: oklch(96% 0.012 258);
     --accent-border: oklch(85% 0.04 258);
-
     --max-width: 1080px;
     --section-padding-y: 6rem;
     --section-padding-x: 2rem;
     --gutter: 2rem;
     --radius-card: 6px;
     --nav-height: 60px;
-
     --font-stack: 'Söhne', 'Helvetica Neue', Arial, sans-serif;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { scroll-behavior: smooth; }
-
   body {
     font-family: var(--font-stack);
     font-weight: 400;
@@ -87,17 +64,11 @@
   body, button, input, select, textarea, h1, h2, h3, h4, h5, h6, p, a, span, dt, dd, li {
     font-family: var(--font-stack);
   }
-
   a { color: inherit; text-decoration: none; }
 
-  /* ============================================================
-     NAV — fixed, compact, white with subtle bottom border
-     ============================================================ */
   .nav {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+    top: 0; left: 0; right: 0;
     height: var(--nav-height);
     background: var(--white);
     border-bottom: 1px solid var(--grey-100);
@@ -112,28 +83,11 @@
     align-items: center;
     justify-content: space-between;
   }
-  .nav-name {
-    font-weight: 500;
-    font-size: 15px;
-    letter-spacing: -0.01em;
-    color: var(--black);
-  }
-  .nav-links {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-  }
-  .nav-links a {
-    font-weight: 400;
-    font-size: 14px;
-    color: var(--grey-700);
-    transition: color 0.15s ease;
-  }
+  .nav-name { font-weight: 500; font-size: 15px; letter-spacing: -0.01em; color: var(--black); }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { font-weight: 400; font-size: 14px; color: var(--grey-700); transition: color 0.15s ease; }
   .nav-links a:hover { color: var(--accent); }
 
-  /* ============================================================
-     HERO — full viewport height, centered
-     ============================================================ */
   .hero {
     min-height: calc(100vh - var(--nav-height));
     display: flex;
@@ -157,21 +111,11 @@
   .hero-inner .hero-name { color: var(--white); }
   .hero-inner .hero-title { color: var(--grey-300); }
   .hero-inner .hero-bio { color: var(--grey-100); }
-  .hero-inner .icon-link {
-    border-color: rgba(255,255,255,0.18);
-    color: var(--grey-100);
-  }
-  .hero-inner .icon-link:hover {
-    border-color: var(--white);
-    color: var(--white);
-  }
-  .hero-inner .headshot {
-    background: var(--grey-500);
-    box-shadow: 0 0 0 4px rgba(255,255,255,0.08);
-  }
+  .hero-inner .icon-link { border-color: rgba(255,255,255,0.18); color: var(--grey-100); }
+  .hero-inner .icon-link:hover { border-color: var(--white); color: var(--white); }
+  .hero-inner .headshot { background: var(--grey-500); box-shadow: 0 0 0 4px rgba(255,255,255,0.08); }
   .headshot {
-    width: 140px;
-    height: 140px;
+    width: 140px; height: 140px;
     border-radius: 50%;
     background: var(--grey-100);
     overflow: hidden;
@@ -180,42 +124,13 @@
     justify-content: center;
     flex-shrink: 0;
   }
-  .headshot img {
-    width: 115%;
-    height: 115%;
-    object-fit: cover;
-    object-position: 50% 8%;
-    display: block;
-  }
-  .hero-name {
-    font-weight: 400;
-    font-size: clamp(48px, 7vw, 72px);
-    line-height: 1.05;
-    letter-spacing: -0.02em;
-    color: var(--black);
-  }
-  .hero-title {
-    font-weight: 300;
-    font-size: 20px;
-    color: var(--grey-700);
-    letter-spacing: -0.01em;
-  }
-  .hero-bio {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.6;
-    color: var(--grey-700);
-    max-width: 520px;
-    text-wrap: pretty;
-  }
-  .hero-links {
-    display: flex;
-    gap: 0.5rem;
-    margin-top: 0.5rem;
-  }
+  .headshot img { width: 115%; height: 115%; object-fit: cover; object-position: 50% 8%; display: block; }
+  .hero-name { font-weight: 400; font-size: clamp(48px, 7vw, 72px); line-height: 1.05; letter-spacing: -0.02em; color: var(--black); }
+  .hero-title { font-weight: 300; font-size: 20px; color: var(--grey-700); letter-spacing: -0.01em; }
+  .hero-bio { font-weight: 400; font-size: 16px; line-height: 1.6; color: var(--grey-700); max-width: 520px; text-wrap: pretty; }
+  .hero-links { display: flex; gap: 0.5rem; margin-top: 0.5rem; }
   .icon-link {
-    width: 40px;
-    height: 40px;
+    width: 40px; height: 40px;
     border: 1px solid var(--grey-100);
     border-radius: var(--radius-card);
     display: flex;
@@ -224,47 +139,15 @@
     color: var(--grey-700);
     transition: border-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
   }
-  .icon-link:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-    transform: translateY(-1px);
-  }
+  .icon-link:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
   .icon-link svg { width: 18px; height: 18px; display: block; }
 
-  /* ============================================================
-     SECTION SHARED
-     ============================================================ */
-  section.block {
-    padding: var(--section-padding-y) var(--section-padding-x);
-  }
-  .section-inner {
-    max-width: var(--max-width);
-    margin: 0 auto;
-  }
-  .section-label {
-    font-weight: 500;
-    font-size: 11px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--grey-500);
-    margin-bottom: 1rem;
-  }
-  .section-heading {
-    font-weight: 400;
-    font-size: 28px;
-    letter-spacing: -0.01em;
-    color: var(--black);
-    margin-bottom: 3rem;
-  }
+  section.block { padding: var(--section-padding-y) var(--section-padding-x); }
+  .section-inner { max-width: var(--max-width); margin: 0 auto; }
+  .section-label { font-weight: 500; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--grey-500); margin-bottom: 1rem; }
+  .section-heading { font-weight: 400; font-size: 28px; letter-spacing: -0.01em; color: var(--black); margin-bottom: 3rem; }
 
-  /* ============================================================
-     PROJECTS — 2-col grid of expandable cards
-     ============================================================ */
-  .projects-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--gutter);
-  }
+  .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gutter); }
   .project-card {
     background: var(--white);
     border: 1px solid var(--grey-100);
@@ -274,254 +157,46 @@
     display: flex;
     flex-direction: column;
   }
-  .project-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 24px rgba(26, 25, 23, 0.06);
-    border-color: var(--grey-300);
-  }
-  .project-thumb {
-    /* ADD THUMBNAIL: replace via inline style="background-image:url(...)" */
-    width: 100%;
-    aspect-ratio: 16 / 10;
-    background: var(--grey-50);
-    border-bottom: 1px solid var(--grey-100);
-  }
-  .project-body {
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    flex: 1;
-  }
-  .project-title {
-    font-weight: 500;
-    font-size: 18px;
-    letter-spacing: -0.01em;
-    color: var(--black);
-  }
-  .project-desc {
-    font-size: 15px;
-    color: var(--grey-700);
-    line-height: 1.5;
-  }
-  .project-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: 0.25rem;
-  }
-  .tag-pill {
-    font-size: 11px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--accent);
-    background: var(--accent-soft);
-    border: 1px solid var(--accent-border);
-    padding: 0.3rem 0.65rem;
-    border-radius: 999px;
-    font-weight: 400;
-  }
-  .project-footer {
-    padding: 1rem 1.5rem 1.5rem;
-    border-top: 1px solid var(--grey-100);
-    margin-top: auto;
-  }
-  .expand-btn {
-    background: none;
-    border: none;
-    font-family: inherit;
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 0.02em;
-    color: var(--black);
-    cursor: pointer;
-    padding: 0;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    transition: color 0.15s ease;
-  }
-  .expand-btn { color: var(--accent); }
+  .project-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(26,25,23,0.06); border-color: var(--grey-300); }
+  .project-thumb { width: 100%; aspect-ratio: 16/10; background: var(--grey-50); border-bottom: 1px solid var(--grey-100); background-size: cover; background-position: center top; }
+  .project-body { padding: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem; flex: 1; }
+  .project-title { font-weight: 500; font-size: 18px; letter-spacing: -0.01em; color: var(--black); }
+  .project-desc { font-size: 15px; color: var(--grey-700); line-height: 1.5; }
+  .project-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.25rem; }
+  .tag-pill { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); background: var(--accent-soft); border: 1px solid var(--accent-border); padding: 0.3rem 0.65rem; border-radius: 999px; font-weight: 400; }
+  .project-footer { padding: 1rem 1.5rem 1.5rem; border-top: 1px solid var(--grey-100); margin-top: auto; }
+  .expand-btn { background: none; border: none; font-family: inherit; font-size: 13px; font-weight: 500; letter-spacing: 0.02em; color: var(--accent); cursor: pointer; padding: 0; display: inline-flex; align-items: center; gap: 0.4rem; transition: color 0.15s ease; }
   .expand-btn:hover { color: oklch(30% 0.12 258); }
-  .expand-btn .chev {
-    transition: transform 0.2s ease;
-    display: inline-block;
-  }
-  .project-card.is-open .expand-btn .chev {
-    transform: rotate(180deg);
-  }
+  .expand-btn .chev { transition: transform 0.2s ease; display: inline-block; }
+  .project-card.is-open .expand-btn .chev { transform: rotate(180deg); }
 
-  .project-expanded {
-    grid-column: 1 / -1;
-    background: var(--off-white);
-    border: 1px solid var(--grey-100);
-    border-radius: var(--radius-card);
-    padding: 2.5rem;
-    display: none;
-    animation: fadeIn 0.25s ease;
-  }
+  .project-expanded { grid-column: 1 / -1; background: var(--off-white); border: 1px solid var(--grey-100); border-radius: var(--radius-card); padding: 2.5rem; display: none; animation: fadeIn 0.25s ease; }
   .project-expanded.is-visible { display: block; }
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(8px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  .expanded-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 1.5rem;
-    gap: 2rem;
-  }
-  .expanded-title {
-    font-weight: 500;
-    font-size: 24px;
-    letter-spacing: -0.01em;
-    color: var(--black);
-  }
-  .close-expanded {
-    background: none;
-    border: 1px solid var(--grey-100);
-    border-radius: var(--radius-card);
-    width: 32px;
-    height: 32px;
-    cursor: pointer;
-    color: var(--grey-700);
-    font-size: 16px;
-    line-height: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: border-color 0.15s ease, color 0.15s ease;
-    flex-shrink: 0;
-  }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+  .expanded-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem; gap: 2rem; }
+  .expanded-title { font-weight: 500; font-size: 24px; letter-spacing: -0.01em; color: var(--black); }
+  .close-expanded { background: none; border: 1px solid var(--grey-100); border-radius: var(--radius-card); width: 32px; height: 32px; cursor: pointer; color: var(--grey-700); font-size: 16px; line-height: 1; display: flex; align-items: center; justify-content: center; transition: border-color 0.15s ease, color 0.15s ease; flex-shrink: 0; }
   .close-expanded:hover { border-color: var(--grey-300); color: var(--black); }
-
-  .expanded-writeup {
-    font-size: 15px;
-    line-height: 1.7;
-    color: var(--grey-700);
-    max-width: 720px;
-    margin-bottom: 2rem;
-    text-wrap: pretty;
-  }
+  .expanded-writeup { font-size: 15px; line-height: 1.7; color: var(--grey-700); max-width: 720px; margin-bottom: 2rem; text-wrap: pretty; }
   .expanded-writeup p + p { margin-top: 1rem; }
-
-  .file-embed {
-    width: 100%;
-    aspect-ratio: 4 / 3;
-    background: var(--grey-100);
-    border-radius: var(--radius-card);
-    border: 1px solid var(--grey-100);
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--grey-500);
-    font-size: 13px;
-    letter-spacing: 0.04em;
-  }
-  .file-embed iframe {
-    width: 100%;
-    height: 100%;
-    border: 0;
-    display: block;
-    background: var(--white);
-  }
-  .file-meta {
-    margin-top: 0.75rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 12px;
-    color: var(--grey-500);
-    letter-spacing: 0.04em;
-  }
-  .file-meta a {
-    color: var(--grey-700);
-    border-bottom: 1px solid var(--grey-300);
-    padding-bottom: 1px;
-    transition: color 0.15s ease, border-color 0.15s ease;
-  }
+  .file-embed { width: 100%; aspect-ratio: 4/3; background: var(--grey-100); border-radius: var(--radius-card); border: 1px solid var(--grey-100); overflow: hidden; display: flex; align-items: center; justify-content: center; color: var(--grey-500); font-size: 13px; letter-spacing: 0.04em; }
+  .file-embed iframe { width: 100%; height: 100%; border: 0; display: block; background: var(--white); }
+  .file-meta { margin-top: 0.75rem; display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: var(--grey-500); letter-spacing: 0.04em; }
+  .file-meta a { color: var(--grey-700); border-bottom: 1px solid var(--grey-300); padding-bottom: 1px; transition: color 0.15s ease, border-color 0.15s ease; }
   .file-meta a:hover { color: var(--accent); border-color: var(--accent); }
-  .project-thumb {
-    width: 100%;
-    aspect-ratio: 16 / 10;
-    background: var(--grey-50);
-    border-bottom: 1px solid var(--grey-100);
-    background-size: cover;
-    background-position: center top;
-  }
 
-  /* ============================================================
-     CONTACT / FOOTER
-     ============================================================ */
-  .contact {
-    border-top: 1px solid var(--accent-border);
-    background: var(--accent-soft);
-  }
-  .contact-inner {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 5rem var(--section-padding-x) 4rem;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
-  .contact-heading {
-    font-weight: 400;
-    font-size: 32px;
-    letter-spacing: -0.02em;
-    color: var(--black);
-    max-width: 520px;
-    text-wrap: pretty;
-  }
-  .contact-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    margin-top: 0.5rem;
-  }
-  .contact-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 15px;
-    color: var(--accent);
-    border-bottom: 1px solid var(--accent-border);
-    padding-bottom: 2px;
-    transition: border-color 0.15s ease, color 0.15s ease;
-  }
-  .contact-link:hover {
-    color: oklch(30% 0.12 258);
-    border-color: var(--accent);
-  }
-  .contact-link .arrow {
-    font-size: 12px;
-    color: var(--grey-500);
-    transition: transform 0.15s ease;
-  }
+  .contact { border-top: 1px solid var(--accent-border); background: var(--accent-soft); }
+  .contact-inner { max-width: var(--max-width); margin: 0 auto; padding: 5rem var(--section-padding-x) 4rem; display: flex; flex-direction: column; gap: 2rem; }
+  .contact-heading { font-weight: 400; font-size: 32px; letter-spacing: -0.02em; color: var(--black); max-width: 520px; text-wrap: pretty; }
+  .contact-links { display: flex; flex-wrap: wrap; gap: 2rem; margin-top: 0.5rem; }
+  .contact-link { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 15px; color: var(--accent); border-bottom: 1px solid var(--accent-border); padding-bottom: 2px; transition: border-color 0.15s ease, color 0.15s ease; }
+  .contact-link:hover { color: oklch(30% 0.12 258); border-color: var(--accent); }
+  .contact-link .arrow { font-size: 12px; color: var(--grey-500); transition: transform 0.15s ease; }
   .contact-link:hover .arrow { transform: translate(2px, -2px); color: var(--accent); }
+  .footer-meta { display: flex; justify-content: space-between; align-items: center; padding-top: 2rem; border-top: 1px solid var(--grey-100); margin-top: 1rem; font-size: 12px; color: var(--grey-500); letter-spacing: 0.02em; }
 
-  .footer-meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 2rem;
-    border-top: 1px solid var(--grey-100);
-    margin-top: 1rem;
-    font-size: 12px;
-    color: var(--grey-500);
-    letter-spacing: 0.02em;
-  }
-
-  /* ============================================================
-     RESPONSIVE — single column at 768px
-     ============================================================ */
   @media (max-width: 768px) {
-    :root {
-      --section-padding-y: 4rem;
-      --section-padding-x: 1.25rem;
-    }
+    :root { --section-padding-y: 4rem; --section-padding-x: 1.25rem; }
     .nav-links { gap: 1.25rem; }
     .nav-links a { font-size: 13px; }
     .hero-name { font-size: 44px; }
@@ -537,9 +212,8 @@
   }
 </style>
 </head>
-<body style="font-family: Söhne; background-color: rgb(253, 250, 250)">
+<body>
 
-<!-- ==================== NAV ==================== -->
 <nav class="nav" aria-label="Primary">
   <div class="nav-inner">
     <a href="#top" class="nav-name">Heaven Yoon</a>
@@ -551,7 +225,6 @@
   </div>
 </nav>
 
-<!-- ==================== HERO ==================== -->
 <section class="hero" id="about">
   <div class="hero-inner">
     <div class="headshot">
@@ -559,27 +232,28 @@
     </div>
 
     <h1 class="hero-name">Heaven Yoon</h1>
-
     <p class="hero-title">Marketing &amp; Market Research</p>
-
     <p class="hero-bio">
       M.S. Marketing candidate at the University of Arizona's Eller College, focused on consumer research, data visualization, and strategy.
       Currently interning at Good JuJu Agency, where I run Google Ads campaigns and turn performance data into recommendations clients can act on.
     </p>
 
     <div class="hero-links">
+      <!-- LinkedIn -->
       <a href="https://www.linkedin.com/in/heaven-yoon/" class="icon-link" aria-label="LinkedIn" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
           <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.22 8h4.56v14H.22V8zm7.5 0h4.37v1.92h.06c.61-1.16 2.1-2.38 4.32-2.38 4.62 0 5.47 3.04 5.47 7v7.46h-4.56v-6.61c0-1.58-.03-3.6-2.2-3.6-2.2 0-2.54 1.72-2.54 3.49V22H7.72V8z"/>
         </svg>
       </a>
-      <a href="mailto:heavenyoon1005@gmail.com"Email Me </a> class="icon-link" aria-label="Email">
+      <!-- Email -->
+      <a href="mailto:heavenyoon1005@gmail.com" class="icon-link" aria-label="Email">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <rect x="3" y="5" width="18" height="14" rx="1.5"/>
           <path d="M3 7l9 6 9-6"/>
         </svg>
       </a>
-      <a href="Resume.pdf" download>Resume</a> class="icon-link" aria-label="Resume" download>
+      <!-- Resume -->
+      <a href="Resume.pdf" class="icon-link" aria-label="Resume" download>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/>
           <path d="M14 3v5h5"/>
@@ -590,7 +264,6 @@
   </div>
 </section>
 
-<!-- ==================== PROJECTS ==================== -->
 <section class="block" id="projects">
   <div class="section-inner">
     <p class="section-label">Selected Work</p>
@@ -598,10 +271,10 @@
 
     <div class="projects-grid" id="projectsGrid">
 
-      <!-- ============ PROJECT CARD 1: Ray-Ban Meta Glasses Marketing Strategy ============ -->
+      <!-- PROJECT CARD 1 -->
       <article class="project-card" data-project="1">
         <div class="project-thumb" style="background-image:url('assets/projects/thumb-rayban.png');"></div>
-        <div class="project-body" style="font-family: Söhne">
+        <div class="project-body">
           <h3 class="project-title">Ray-Ban Meta Glasses: Go-to-Market Strategy</h3>
           <p class="project-desc">A 13-page marketing plan for capturing mainstream adoption of Ray-Ban's smart glasses.</p>
           <div class="project-tags">
@@ -616,7 +289,7 @@
         </div>
       </article>
 
-      <!-- ============ PROJECT 1 EXPANDED ============ -->
+      <!-- PROJECT 1 EXPANDED -->
       <div class="project-expanded" id="project-1-expanded" data-expanded="1">
         <div class="expanded-header">
           <h3 class="expanded-title">Ray-Ban Meta Glasses: Go-to-Market Strategy</h3>
@@ -628,7 +301,7 @@
           <p>Outcome: a complete launch playbook — segment-specific positioning, distribution strategy, and promotional channels — with appendices supporting each recommendation.</p>
         </div>
         <div class="file-embed">
-          <iframe src="assets/projects/rayban-meta-strategy.pdf#view=FitH" title="Ray-Ban Meta Glasses Marketing Strategy" loading="lazy"></iframe>
+          <iframe src="Rayban Marketing Strategy.pdf#view=FitH" title="Ray-Ban Meta Glasses Marketing Strategy" loading="lazy"></iframe>
         </div>
         <p class="file-meta">
           <span>13 pages · PDF · MKTG 500, Dec 2025</span>
@@ -636,10 +309,10 @@
         </p>
       </div>
 
-      <!-- ============ PROJECT CARD 2: Netnography Analysis ============ -->
+      <!-- PROJECT CARD 2 -->
       <article class="project-card" data-project="2">
         <div class="project-thumb" style="background-image:url('assets/projects/thumb-netnography.png');"></div>
-        <div class="project-body" style="font-family: Söhne">
+        <div class="project-body">
           <h3 class="project-title">Nintendo Switch 2: Netnography Report</h3>
           <p class="project-desc">Forum-based qualitative research on what drives purchase decisions in the Nintendo Life community.</p>
           <div class="project-tags">
@@ -654,7 +327,7 @@
         </div>
       </article>
 
-      <!-- ============ PROJECT 2 EXPANDED ============ -->
+      <!-- PROJECT 2 EXPANDED -->
       <div class="project-expanded" id="project-2-expanded" data-expanded="2">
         <div class="expanded-header">
           <h3 class="expanded-title">Nintendo Switch 2: Netnography Report</h3>
@@ -666,7 +339,7 @@
           <p>Findings: users prioritize price, library, and future-proofing over raw specs; "insider" and "devotee" participant types shape discussion; the community is built around shared knowledge rather than hype, with cautious purchase advice the norm. Three testable hypotheses for follow-up research are included.</p>
         </div>
         <div class="file-embed">
-          <iframe src="assets/projects/netnography-analysis.pdf#view=FitH" title="Netnography Analysis" loading="lazy"></iframe>
+          <iframe src="Netnography Analysis.pdf#view=FitH" title="Netnography Analysis" loading="lazy"></iframe>
         </div>
         <p class="file-meta">
           <span>22 slides · MKTG 572, Group 6</span>
@@ -674,11 +347,11 @@
         </p>
       </div>
 
-      <!-- ============ PROJECT CARD 3: Facebook Tableau Visualization ============ -->
+      <!-- PROJECT CARD 3 -->
       <article class="project-card" data-project="3">
         <div class="project-thumb" style="background-image:url('assets/projects/thumb-facebook-tableau.png');"></div>
         <div class="project-body">
-          <h3 class="project-title" style="font-family: Söhne">Facebook Engagement: Tableau Visualization</h3>
+          <h3 class="project-title">Facebook Engagement: Tableau Visualization</h3>
           <p class="project-desc">[NEEDS DESCRIPTION — short summary of what the Tableau dashboard analyzes.]</p>
           <div class="project-tags">
             <span class="tag-pill">Tableau</span>
@@ -692,20 +365,19 @@
         </div>
       </article>
 
-      <!-- ============ PROJECT 3 EXPANDED ============ -->
+      <!-- PROJECT 3 EXPANDED -->
       <div class="project-expanded" id="project-3-expanded" data-expanded="3">
         <div class="expanded-header">
           <h3 class="expanded-title">Facebook Engagement: Tableau Visualization</h3>
           <button class="close-expanded" type="button" aria-label="Close">×</button>
         </div>
         <div class="expanded-writeup">
-          <!-- NEEDS WRITE-UP: the source deck contained only a title slide. Heaven, fill in context, methodology, and outcome below. -->
           <p>[Context — what dataset did you visualize, and why?]</p>
           <p>[Approach — what dimensions and measures did you choose, and what story did the dashboard tell?]</p>
           <p>[Outcome — what insight came out of it?]</p>
         </div>
         <div class="file-embed">
-          <iframe src="assets/projects/facebook-tableau.pdf#view=FitH" title="Facebook Tableau Visualization" loading="lazy"></iframe>
+          <iframe src="Facebook Tableau Visualization.pdf#view=FitH" title="Facebook Tableau Visualization" loading="lazy"></iframe>
         </div>
         <p class="file-meta">
           <span>2 slides · Tableau export</span>
@@ -713,10 +385,10 @@
         </p>
       </div>
 
-      <!-- ============ PROJECT CARD 4: Stock Price Chart ============ -->
+      <!-- PROJECT CARD 4 -->
       <article class="project-card" data-project="4">
         <div class="project-thumb" style="background-image:url('assets/projects/thumb-stock.png');"></div>
-        <div class="project-body" style="font-family: Söhne">
+        <div class="project-body">
           <h3 class="project-title">Live Stock Price Chart: Python Simulation</h3>
           <p class="project-desc">A Python program that animates a simulated stock price and labels its high, low, and close.</p>
           <div class="project-tags">
@@ -731,7 +403,7 @@
         </div>
       </article>
 
-      <!-- ============ PROJECT 4 EXPANDED ============ -->
+      <!-- PROJECT 4 EXPANDED -->
       <div class="project-expanded" id="project-4-expanded" data-expanded="4">
         <div class="expanded-header">
           <h3 class="expanded-title">Live Stock Price Chart: Python Simulation</h3>
@@ -743,7 +415,7 @@
           <p>The deliverable shows comfort with control flow, randomness, and graphical state — translating a real-world visualization concept into clean, commented Python.</p>
         </div>
         <div class="file-embed">
-          <iframe src="assets/projects/stock-price-chart.pdf#view=FitH" title="Stock Price Chart Programming Assignment" loading="lazy"></iframe>
+          <iframe src="Programming Assignment #4.pdf#view=FitH" title="Stock Price Chart Programming Assignment" loading="lazy"></iframe>
         </div>
         <p class="file-meta">
           <span>12 pages · PDF · MIS 503, May 2026</span>
@@ -755,24 +427,21 @@
   </div>
 </section>
 
-<!-- ==================== CONTACT / FOOTER ==================== -->
 <section class="contact" id="contact">
-  <div class="contact-inner" style="font-family: Söhne">
+  <div class="contact-inner">
     <p class="section-label">Contact</p>
     <h2 class="contact-heading">Open to full-time marketing and market research roles starting late July / early August 2026.</h2>
-
     <div class="contact-links">
-      <a href="/cdn-cgi/l/email-protection#58303d392e3d36213737366968686d183f35393134763b3735" class="contact-link">
-        <span class="__cf_email__" data-cfemail="137b767265767d6a7c7c7d2223232653747e727a7f3d707c7e">[email&#160;protected]</span> <span class="arrow">↗</span>
+      <a href="mailto:heavenyoon1005@gmail.com" class="contact-link">
+        heavenyoon1005@gmail.com <span class="arrow">↗</span>
       </a>
       <a href="https://www.linkedin.com/in/heaven-yoon/" class="contact-link" target="_blank" rel="noopener">
         LinkedIn <span class="arrow">↗</span>
       </a>
-      <a href="assets/Heaven-Yoon-Resume.docx" class="contact-link" download>
+      <a href="Resume.pdf" class="contact-link" download>
         Resume <span class="arrow">↓</span>
       </a>
     </div>
-
     <div class="footer-meta">
       <span>© <span id="year"></span> Heaven Yoon</span>
       <span>Built one page at a time.</span>
@@ -780,17 +449,10 @@
   </div>
 </section>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  // ============================================================
-  // Project cards — expand/collapse logic
-  // Clicking a card's "View write-up" toggles its expanded panel.
-  // Only one panel open at a time. The expanded panel renders
-  // full-width below the row containing the clicked card.
-  // ============================================================
+<script>
   (function () {
     const grid = document.getElementById('projectsGrid');
     if (!grid) return;
-
     const cards = grid.querySelectorAll('.project-card');
     const panels = grid.querySelectorAll('.project-expanded');
 
@@ -816,12 +478,6 @@
           card.classList.add('is-open');
           btn.setAttribute('aria-expanded', 'true');
           panel.classList.add('is-visible');
-          // Place the expanded panel right after the card's row.
-          // On 2-col grid, move it after the second card in the same row.
-          const cardIndex = Array.prototype.indexOf.call(grid.children, card);
-          // Reorder via grid's natural source order: move panel directly after card pair
-          // (we leave it in source order and rely on grid-column: 1 / -1 for full-bleed.)
-          // For correct row placement, move panel DOM-after the card in its row pair.
           const allCards = Array.from(grid.querySelectorAll('.project-card'));
           const idxInCards = allCards.indexOf(card);
           const partnerIdx = idxInCards % 2 === 0 ? idxInCards + 1 : idxInCards;
@@ -829,7 +485,6 @@
           if (anchor.nextSibling !== panel) {
             grid.insertBefore(panel, anchor.nextSibling);
           }
-          // Smooth-scroll the panel into view (with offset for fixed nav)
           setTimeout(() => {
             const navH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-height')) || 60;
             const top = panel.getBoundingClientRect().top + window.pageYOffset - navH - 20;
@@ -839,7 +494,6 @@
       });
     });
 
-    // Close buttons inside expanded panels
     grid.querySelectorAll('.close-expanded').forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -847,15 +501,12 @@
       });
     });
 
-    // Esc closes any open panel
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') closeAll();
     });
   })();
 
-  // Footer year
   document.getElementById('year').textContent = new Date().getFullYear();
 </script>
-
 </body>
 </html>
